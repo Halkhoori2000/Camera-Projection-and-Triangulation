@@ -284,6 +284,35 @@
 
 <div class="container">
 
+  <!-- Real outputs -->
+  <div class="section-label">Real Output — Subject 4, Session 3, Frame 1235</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden">
+      <div style="padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px;font-weight:600;color:var(--green)">Camera Vue2 — Projected Skeleton</div>
+      <img src="data/previews/skeleton_vue2.png" style="width:100%;display:block" alt="Vue2 projected skeleton" loading="lazy">
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden">
+      <div style="padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px;font-weight:600;color:var(--orange)">Camera Vue4 — Projected Skeleton</div>
+      <img src="data/previews/skeleton_vue4.png" style="width:100%;display:block" alt="Vue4 projected skeleton" loading="lazy">
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden">
+      <div style="padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px;font-weight:600;color:var(--purple)">3D Mocap Skeleton — Frame 1235</div>
+      <img src="data/previews/skeleton_3d.png" style="width:100%;display:block" alt="3D skeleton" loading="lazy">
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden">
+      <div style="padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px;font-weight:600;color:var(--accent-hover)">L2 Triangulation Error — All Valid Frames</div>
+      <img src="data/previews/l2_error.png" style="width:100%;display:block" alt="L2 error plot" loading="lazy">
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:40px">
+    <strong style="color:var(--green)">Green</strong> = mocap ground truth projected onto the camera plane.
+    <strong style="color:#f87171"> Red</strong> = triangulated joint positions re-projected back.
+    Grey lines = epipolar lines through each joint toward the opposite camera's epipole.
+    Error plot computed over 25,758 fully valid frames (all 12 joints visible).
+  </p>
+
   <!-- Pipeline flow -->
   <div class="section-label">Pipeline</div>
   <div class="pipeline-flow">
