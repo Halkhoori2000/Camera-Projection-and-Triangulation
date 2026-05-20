@@ -6,6 +6,18 @@ Implemented in MATLAB from scratch. The pipeline applies a full camera model (K�
 
 **[Live Demo →](https://halkhoori2000.github.io/Camera-Projection-and-Triangulation/)**
 
+## Use Cases
+- Optical motion capture for film and VFX: exactly the setup used here — multiple calibrated cameras reconstruct 3D joint positions from a performer, driving character animation
+- Sports biomechanics analysis: multi-camera systems track athlete joint angles and velocities for injury prevention and performance optimisation
+- Stereo vision depth estimation: triangulation from two calibrated views is the core of stereo cameras used in autonomous vehicles and robotics
+- Augmented reality: projecting virtual objects into a real camera view requires the same K·[R|t] projection model implemented in Project.m
+
+## Challenges
+- **Radial distortion correction**: lens distortion displaces image points from their ideal positions — the k₁r²+k₂r⁴ correction must be applied after projection because the correction magnitude depends on the projected pixel's distance from the principal point, creating a chicken-and-egg dependency between the ideal and distorted coordinates
+- **Triangulation degeneracy**: when two rays are nearly parallel (the 3D point is far from both cameras relative to their baseline), the nearest-midpoint formula becomes numerically unstable — small angular errors in the back-projected rays produce disproportionately large errors in the reconstructed 3D position
+- **Coordinate frame alignment**: mocap data and camera calibration use independent 3D coordinate systems — the world origin, axis orientation, and scale must match exactly for the L2 error comparison against ground truth to be valid; a misaligned frame produces large apparent errors even when the triangulation itself is correct
+- **Occlusion and invalid joints**: not all 12 joints are visible in every mocap frame — including frames with missing joints in the error statistics biases the mean and std; the valid-frame filter (requiring all 12 joints present) in QuantitativeAnalysis.m is essential for meaningful accuracy reporting
+
 ---
 
 ## Pipeline
