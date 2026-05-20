@@ -1,10 +1,10 @@
 % Project 2 Implementation
 % Load the mocap joints measurement
-load('Subject4-Session3-Take4_mocapJoints.mat'); 
+load('../data/Subject4-Session3-Take4_mocapJoints.mat');
 
 % Load the camera calibration data
-load('vue4CalibInfo.mat');
-load('vue2CalibInfo.mat');
+load('../data/vue4CalibInfo.mat');
+load('../data/vue2CalibInfo.mat');
 
 % CHECK IF THE POINT IS CORRECT
 % Load the video file 

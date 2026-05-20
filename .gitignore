@@ -1,0 +1,15 @@
+# MATLAB generated
+*.asv
+*.m~
+*.mlx
+*.fig
+*.mex*
+
+# Large video files (not tracked — place alongside data/ to run)
+*.mp4
+*.avi
+*.mov
+
+# OS
+.DS_Store
+Thumbs.db
