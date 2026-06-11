@@ -1,5 +1,7 @@
 # Camera Projection & Triangulation — MATLAB
 
+*CMPEN 454 — Fundamentals of Computer Vision · The Pennsylvania State University · 2022*
+
 Given the 3D positions of a person's body joints from a motion capture system, this project figures out exactly where those joints would appear on two camera views — and then works backwards from those camera images to reconstruct the 3D positions. It measures how accurately the reconstruction matches the original motion capture data.
 
 Implemented in MATLAB from scratch. The pipeline applies a full camera model (K·[R|t] with radial distortion correction) to project 3D world points to 2D pixel coordinates, inverts the camera model to back-project 2D points to 3D unit rays, and triangulates 3D positions using a cross-product ray nearest-midpoint formula. Evaluation computes per-joint L2 error against ground truth across all frames, with statistics (mean, std, median, min, max) and visual overlays of projected joints and skeleton on actual video frames from both cameras.
