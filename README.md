@@ -110,5 +110,5 @@ project2
 
 ## Course
 
-TBD  
-The Pennsylvania State University
+CMPEN 454 — Fundamentals of Computer Vision  
+The Pennsylvania State University · 2022
