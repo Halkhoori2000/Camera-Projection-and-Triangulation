@@ -8,6 +8,8 @@ Implemented in MATLAB from scratch. The pipeline applies a full camera model (K�
 
 **[Live Demo →](https://halkhoori2000.github.io/Camera-Projection-and-Triangulation/)**
 
+📄 **[Project Report](docs/project-report.docx)** — the original write-up (method, derivations, results)
+
 ## Use Cases
 - Optical motion capture for film and VFX: exactly the setup used here — multiple calibrated cameras reconstruct 3D joint positions from a performer, driving character animation
 - Sports biomechanics analysis: multi-camera systems track athlete joint angles and velocities for injury prevention and performance optimisation
